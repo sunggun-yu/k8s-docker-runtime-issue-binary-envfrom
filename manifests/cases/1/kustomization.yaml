@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namePrefix: case1-
+namespace: case1
+resources:
+- ../../base
+secretGenerator:
+- files:
+  - secret.png
+  name: secret
+patches:
+- path: deployment.yaml
